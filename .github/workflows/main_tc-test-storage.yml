@@ -22,7 +22,7 @@ jobs:
           java-version: '11'
 
       - name: Build with Maven
-        run: gradle build
+        run: 'gradle build -PazureRepoUsername=${{TC_REPO_USER}} -PazureRepoPassword=${{TC_REPO_PASS}} -PazureRepoUrl=${{TC_REPO_URL}}'
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
