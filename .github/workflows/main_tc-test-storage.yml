@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'tc-test-storage'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4E2856A9E96C464EB7EC8DCE8718439B }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: '*.jar'
