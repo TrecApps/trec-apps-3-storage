@@ -1,5 +1,5 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions  
+# More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy JAR app to Azure Web App - tc-test-storage
 
@@ -21,7 +21,7 @@ jobs:
         with:
           java-version: '11'
 
-      - name: Build with Maven
+      - name: Build with Gradle
         run: gradle build -PazureRepoUsername=${{ secrets.TC_REPO_USER }} -PazureRepoPassword=${{ secrets.TC_REPO_PASS }} -PazureRepoUrl=${{ secrets.TC_REPO_URL }}
 
       - name: Upload artifact for deployment job
@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'tc-test-storage'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_32CA241F17D246D0BED2E1833549003D }}
           package: '*.jar'
