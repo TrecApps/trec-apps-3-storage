@@ -16,6 +16,10 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
 
+    // Azure Logging
+    implementation 'com.microsoft.azure:applicationinsights-spring-boot-starter:+'
+    implementation 'com.microsoft.azure:applicationinsights-logging-logback:+'
+
 
     // Spring Boot features
     implementation 'org.springframework.boot:spring-boot-starter-web:+'
