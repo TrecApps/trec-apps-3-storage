@@ -1,6 +1,5 @@
 package com.trecapps.internal.storage.controllers;
 
-import com.microsoft.azure.storage.StorageException;
 import com.trecapps.internal.storage.models.FileData;
 import com.trecapps.internal.storage.services.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,8 +105,6 @@ public class FileController {
             return new ResponseEntity<>(content, HttpStatus.OK);
         } catch (IOException | URISyntaxException e) {
             return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
-        } catch (StorageException e) {
-            return new ResponseEntity<>("Could not Access Azure Storage", HttpStatus.BAD_GATEWAY);
         } catch (IllegalAccessException e) {
             String ex = e.getMessage();
             HttpStatus stat = ex.startsWith("Unknown") ? HttpStatus.UNAUTHORIZED : HttpStatus.FORBIDDEN;
